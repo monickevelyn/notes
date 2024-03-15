@@ -1,5 +1,6 @@
 import ContainerNote from "./ContainerNote";
 import AddNote from "./AddNote";
+import ContainerNull from "./ContainerNull";
 
 import { v4 as uid } from "uuid";
 import { useState } from "react";
@@ -44,7 +45,9 @@ export default function Notes() {
                 onClick={() => del(note.id)}
               />
             ))}
-        </section>        
+        </section>    
+
+        {notes.length === 0 && <ContainerNull />}    
       </>
     );
 }
