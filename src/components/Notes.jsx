@@ -4,7 +4,7 @@ import ContainerNull from "./ContainerNull";
 import Message from "./Message";
 
 import { v4 as uid } from "uuid";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Notes() {
     const [input, setInput] = useState("");
@@ -31,6 +31,17 @@ export default function Notes() {
         const newNotes = notes.filter((n) => n.id !== id);
         setNotes(newNotes);
     };
+
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem("Notes"));
+        if (data) {
+          setNotes(data);
+        }
+      }, []);
+    
+    useEffect(() => {
+       window.localStorage.setItem("Notes", JSON.stringify(notes));
+    }, [notes]);
 
     return (
       <>
