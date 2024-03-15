@@ -1,6 +1,6 @@
 import { func, any, string } from "prop-types"
 
-export default function AddtNote({ value, onChange, placeholder, handleAdd }) {
+export default function AddNote({ value, onChange, placeholder, onClick }) {
   return (
     <>
     <div className="flex flex-row items-center justify-center gap-4 p-2 w-full">
@@ -11,15 +11,16 @@ export default function AddtNote({ value, onChange, placeholder, handleAdd }) {
           backgroundColor: "var(--color-container)",
         }}
       />
-      <button onClick={handleAdd} className="w-20 h-10 outline-none rounded p-1 text-base font-medium border-2"
-        style={{ color: "var(--color)", borderColor: "var(--color)"}}>Adicionar</button>
+      <button onClick={onClick} className="text-base font-medium" style={{ color: "var(--color)"}}>
+        Adicionar
+      </button>
     </div>    
     </>
   )
 }
-AddtNote.propTypes = {
+AddNote.propTypes = {
   value: any, 
   onChange: func,
   placeholder: string,
-  handleAdd: func,
+  onClick: func,
 }
