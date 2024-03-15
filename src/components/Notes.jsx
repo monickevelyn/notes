@@ -1,6 +1,7 @@
 import ContainerNote from "./ContainerNote";
 import AddNote from "./AddNote";
 import ContainerNull from "./ContainerNull";
+import Message from "./Message";
 
 import { v4 as uid } from "uuid";
 import { useState } from "react";
@@ -8,11 +9,11 @@ import { useState } from "react";
 export default function Notes() {
     const [input, setInput] = useState("");
     const [notes, setNotes] = useState([]);
-    // const [msg, setMsg] = useState(false);
+    const [msg, setMsg] = useState(false);
 
     const add = () => {
         if (input === "") {
-        //   return setMsg(true);
+          return setMsg(true);
         } else {
           setNotes((prev) => [
             ...prev,
@@ -23,7 +24,7 @@ export default function Notes() {
           ]);
         }
         setInput("");
-        // setMsg(false);
+        setMsg(false);
     };
 
     const del = (id) => {
@@ -34,6 +35,7 @@ export default function Notes() {
     return (
       <>
       <AddNote value={input} placeholder="Adicione uma nota..." onChange={(e) => setInput(e.target.value)} onClick={add} />
+      {msg === true && <Message text="Preencha o campo." />}
 
       <section className="w-full p-4 min-h-full flex flex-row flex-wrap justify-center items-start gap-4">
           {notes.length >= 1 &&
