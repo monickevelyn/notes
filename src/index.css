@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --color: #af79ec;
+  --color-container: #121212;
+  --color-font: #ffff;
+  --color-bg:  #191919;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1500px;
+  min-width: 320px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-font);
+}
