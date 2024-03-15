@@ -25,6 +25,11 @@ export default function Notes() {
         // setMsg(false);
     };
 
+    const del = (id) => {
+        const newNotes = notes.filter((n) => n.id !== id);
+        setNotes(newNotes);
+    };
+
     return (
       <>
       <AddNote value={input} placeholder="Adicione uma nota..." onChange={(e) => setInput(e.target.value)} onClick={add} />
@@ -36,6 +41,7 @@ export default function Notes() {
                 key={note.id}
                 id={note.id}
                 text={note.text}
+                onClick={() => del(note.id)}
               />
             ))}
         </section>        
