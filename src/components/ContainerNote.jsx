@@ -1,5 +1,4 @@
 import { string, func, any } from "prop-types";
-
 export default function ContainerNote({ text, onClick, id }) {
   return (
     <>

@@ -1,4 +1,3 @@
-
 import img from "../assets/Left hander-cuate.svg"
 
 export default function ContainerNull() {  
