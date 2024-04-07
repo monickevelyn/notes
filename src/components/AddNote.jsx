@@ -6,7 +6,7 @@ export default function AddNote({ value, onChange, placeholder, onClick }) {
     <div className="flex flex-row items-center justify-center gap-4 p-2 w-full">
       <input type="text" name="addnote" id="addnote" 
         placeholder={placeholder}  value={value} onChange={onChange}
-        className="max-h-96 h-96 min-w-56 h-10 outline-none border-none rounded p-2"
+        className="max-w-96 w-96 min-w-56 h-10 outline-none border-none rounded p-2"
         style={{
           backgroundColor: "var(--color-container)",
         }}
