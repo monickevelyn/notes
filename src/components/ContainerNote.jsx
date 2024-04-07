@@ -4,13 +4,13 @@ export default function ContainerNote({ text, onClick, id }) {
     <>
       <div
         id={id}
-        className="w-72 h-52 rounded font-normal text-1xl flex flex-col justify-start items-start gap-4 break-all overflow-y-auto"
+        className="min-w-72 w-96 h-fit min-h-44 rounded font-normal text-1xl flex flex-col justify-start items-start gap-4 break-all overflow-y-auto"
         style={{ backgroundColor: "var(--color-container)" }}
       >
         <div className="w-full p-2 self-end border-x-2" style={{ borderColor: "var(--color)"}} >
           <button onClick={onClick} className="outline-none text-base font-medium" style={{ color: "white"}}>Apagar</button>
         </div>
-        <p className="text-left p-2 break-normal;">{text}</p>
+        <p className="text-left p-2 text-wrap;">{text}</p>
       </div>
     </>
   );
